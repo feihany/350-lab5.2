@@ -14,7 +14,7 @@ model_select = function(covariates, responses, cutoff){
   }
 }
 
-run_simulation = function(n_trials = 1000, n, p, cutoff = 0.05){
+run_simulation = function(n_trials, n, p, cutoff){
   p_values = replicate(n_trials, {model_select(generate_data(n, p)$covariates, 
                                                generate_data(n, p)$responses, 
                                                cutoff = cutoff)})
